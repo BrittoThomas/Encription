@@ -12,6 +12,7 @@
 		41670E6020A1CA8C008C9E09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41670E5E20A1CA8C008C9E09 /* Main.storyboard */; };
 		41670E6220A1CA8C008C9E09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41670E6120A1CA8C008C9E09 /* Assets.xcassets */; };
 		41670E6520A1CA8C008C9E09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41670E6320A1CA8C008C9E09 /* LaunchScreen.storyboard */; };
+		5D6F194E0E8A6AD501C29F9A /* Pods_Encription.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5F676D0FA0763EDB2C965F /* Pods_Encription.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		41670E6120A1CA8C008C9E09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41670E6420A1CA8C008C9E09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41670E6620A1CA8C008C9E09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		649ADE8E580A6343D5327088 /* Pods-Encription.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Encription.release.xcconfig"; path = "Pods/Target Support Files/Pods-Encription/Pods-Encription.release.xcconfig"; sourceTree = "<group>"; };
+		675D2B8FBEC5998296BCB00B /* Pods-Encription.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Encription.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Encription/Pods-Encription.debug.xcconfig"; sourceTree = "<group>"; };
+		AA5F676D0FA0763EDB2C965F /* Pods_Encription.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Encription.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D6F194E0E8A6AD501C29F9A /* Pods_Encription.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F9AD414E8D9047DE0648A99 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				675D2B8FBEC5998296BCB00B /* Pods-Encription.debug.xcconfig */,
+				649ADE8E580A6343D5327088 /* Pods-Encription.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		41670E4E20A1CA8C008C9E09 = {
 			isa = PBXGroup;
 			children = (
 				41670E5920A1CA8C008C9E09 /* Encription */,
 				41670E5820A1CA8C008C9E09 /* Products */,
+				2F9AD414E8D9047DE0648A99 /* Pods */,
+				C54996F9F91D8D4905ECFCE2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = Encription;
 			sourceTree = "<group>";
 		};
+		C54996F9F91D8D4905ECFCE2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA5F676D0FA0763EDB2C965F /* Pods_Encription.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 41670E6920A1CA8C008C9E09 /* Build configuration list for PBXNativeTarget "Encription" */;
 			buildPhases = (
+				7E57D44ED9F2F8217C2496F1 /* [CP] Check Pods Manifest.lock */,
 				41670E5320A1CA8C008C9E09 /* Sources */,
 				41670E5420A1CA8C008C9E09 /* Frameworks */,
 				41670E5520A1CA8C008C9E09 /* Resources */,
+				A72C7906AB76F8C74B5D6CE9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,6 +156,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7E57D44ED9F2F8217C2496F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Encription-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A72C7906AB76F8C74B5D6CE9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Encription/Pods-Encription-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Encription/Pods-Encription-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		41670E5320A1CA8C008C9E09 /* Sources */ = {
@@ -272,6 +337,7 @@
 		};
 		41670E6A20A1CA8C008C9E09 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 675D2B8FBEC5998296BCB00B /* Pods-Encription.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +352,7 @@
 		};
 		41670E6B20A1CA8C008C9E09 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 649ADE8E580A6343D5327088 /* Pods-Encription.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
